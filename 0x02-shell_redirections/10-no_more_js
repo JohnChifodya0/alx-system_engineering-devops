@@ -1,2 +1,21 @@
 #!/bin/bash
-find . type f name "*.js" -delete
+
+
+
+# Find all files with a .js extension in the current directory and subdirectories
+
+find . -type f -name "*.js" | while read file; do
+
+  # Check if the file is a regular file (not a directory)
+
+    if [ -f "$file" ]; then
+
+	        # Delete the file
+
+		    rm "$file"
+
+		      fi
+
+	      done
+
+
